@@ -15,17 +15,17 @@ function getModalHtml(){
        `
        <div class="modal-overlay"> 
             <div class="modal" id="modal">
-                <div class="modal-container">
+                <form class="modal-container">
                     <button class="close-window" id="close-window">x</button>
                     <div class="modal-title">Enter payment Info</div>
                     <label for "buyer-name">Name</label>
-                    <input type="text" id="buyer-name" placeholder="Jimi Hendrix">   
+                    <input required type="text" id="buyer-name" placeholder="Jimi Hendrix">   
                     <label for "buyer-name">Card Number</label>
-                    <input type="text" id="buyer-card-number" placeholder="**** **** **** ****">  
-                    <label for "buyer-name">CVV</label>
-                    <input type="text" id="card-cvv" placeholder="***">  
+                    <input required type="text" id="buyer-card-number" placeholder="**** **** **** ****">  
+                    <label for "buyer-name">CVC</label>
+                    <input required type="text" id="card-cvv" placeholder="***">  
                     <input type="submit" class="submit-payment" id="submit-payment">
-                </div>
+                </form>
             </div>
         </div> 
        
@@ -47,12 +47,22 @@ document.addEventListener('click', function(event) {
         modalElement.style.display = "none";
         modalOverlay.style.display = "none";
     }
-    if (event.target.matches("#submit-payment")){
-        clearCart();
-        modalElement.style.display = "none"
-        modalOverlay.style.display = "none"
-    }
 })
+
+document.addEventListener('submit', function(event) {
+    if (event.target.matches('.modal-container')) {
+        event.preventDefault();
+        if (event.target.checkValidity()) {
+            clearCart();
+            modalElement.style.display = "none";
+            modalOverlay.style.display = "none";
+        } else {
+            event.target.reportValidity();
+        }
+    }
+});
+
+
 
 
 

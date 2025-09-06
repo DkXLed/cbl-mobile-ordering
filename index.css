@@ -1,0 +1,263 @@
+
+
+.bungee-regular {
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+    background-color: black;
+    font-family: Bungee, 'Times New Roman', Times, serif;
+} 
+
+.main-wrapper{
+    margin: auto;
+    max-width: 100%;
+    min-width: 50%
+}
+
+.img-container, .width-container{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.width-container{
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titleImg {
+    margin:40 20 80 20;
+    min-height:25%;
+    box-shadow: 0 0 90px #3E006A;
+}
+
+.feed-container{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    margin: 20px;
+    color: aliceblue;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.name, .price, .sizes{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-shadow: 1px 1px 4px black;
+}
+
+#thumbnail{
+    width: 100%;
+    min-width: 0;
+
+}
+
+.obj-Img{
+    display: flex;
+    flex-shrink: 0;
+    width: 25%;
+    box-shadow: 0 0 30px #3E006A;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.obj-Img, .menuItems{
+    margin-right: 10px;
+}
+
+.menuItems{
+    flex-grow: 1;
+    min-width: 0; 
+    overflow: hidden; 
+    white-space: nowrap; 
+}
+
+.addBtn{
+margin-left: auto;
+margin-right: 0;
+flex-shrink: 0;
+}
+
+h1{
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+h2{
+    font-size: .8rem;
+    margin-top: 0;
+    overflow-x: auto;
+    font-weight: 100;
+}
+
+.price{
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.your-order{
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.order-page{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 80px;
+    width: 100%;
+    
+}
+
+.cart-items, .totals{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-items{
+    border-bottom: 2px solid #fff;
+}
+
+.item{
+    display: inline-block;
+}
+
+.remove-btn{
+    font-size: .5rem;
+    text-decoration: underline;
+    color: red;
+}
+
+.unit-price{
+    margin-right: 0;
+}
+
+.totals{
+    margin-bottom: 30px;
+}
+
+.complete-order{
+    padding: 8px 15px;
+    font-family: Bungee;
+    margin: auto;
+    color: #fff;
+    background-color: #3E006A;
+    text-shadow: 1px 1px 4px black;
+    border: 2px solid gray;
+    box-shadow: 0px 0px 30px #007BFF;
+    font-weight: 100;
+}
+
+.remove-btn:hover{
+    cursor: pointer;
+}
+
+#modal-feed{
+    display: none;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 999; 
+}
+
+
+
+.modal{
+    color: black;
+    border: 3px solid yellow;
+    border-radius: 75px 0px 75px;
+    padding: 40px;
+    margin: auto;
+    width: 50%;
+    max-width: 400px;
+    font-size: 20px;
+    font-weight: 900;
+    position: fixed;
+    top: 20%;
+    left: 0;
+    right: 0;
+    bottom: 15%;
+    background-color: azure;
+    z-index: 9999;
+    overflow: auto;
+}
+
+
+.modal-container{
+    display: flex;
+    flex-direction: column;
+}
+
+#close-window{
+    align-self: end;
+    margin-bottom: 20px;
+    background-color: red;
+    border-radius: 5px;
+    font-weight: 900;
+}
+
+.modal-title{
+    color: #007BFF;
+    -webkit-text-stroke-width: .1px ;
+    -webkit-text-stroke-color: #3E006A;
+    font-size: 1.5rem;
+    z-index: 9999;
+    margin: 0px auto 1px;
+}
+
+label{
+    margin-top: 1.2rem;
+    margin-bottom: 6px;
+    padding: 0;
+    color: #111;
+    font-size: .8rem;
+    font-weight: 200;
+    
+}
+
+input{
+    padding: 6px 10px;
+    border-bottom: 1px solid gray;
+}
+
+.submit-payment{
+    margin:10% auto 0;
+    width: 50%;
+    padding: 10px 20px;
+    font-family: Bungee;
+    font-size: 1.2rem;
+    border-radius: 10px 0 10px;
+}
+
+input, label, .modal-title{
+    flex-shrink: 1;
+}
+
+.confirm-order{
+    color: #fff;
+    background-color: #3E006A;
+    border: 3px solid yellow;
+    padding: 5px;
+    border-radius: 5px;
+    text-shadow: 0px 0px 5px black;
+}

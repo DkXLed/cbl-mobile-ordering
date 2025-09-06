@@ -1,0 +1,93 @@
+/* Styling for the button */
+/* In animatedBorder.css */
+.bungee-regular {
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.addBtn {
+  font-size: 30px;
+  font-family: Bungee;
+  text-shadow: #007BFF;
+  color: #fff;
+  background: none;
+  border: none;
+  border-radius: 50%; 
+  position: relative;
+  z-index: 1;
+  transition: .3s;
+  cursor: pointer;
+  
+  /* Use Flexbox to center the text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  padding: 1.5rem; /* This will now be relative to the aspect ratio */
+  
+  /* Force the element to be a perfect square */
+  aspect-ratio: 1 / 1;
+  
+  width: auto;
+  height: auto;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+/* Pseudo-element for the animated border */
+.addBtn:before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  padding: 10px;
+  border-radius: 50%; 
+  background: conic-gradient(
+        #007BFF, /* Blue */
+        #0000 30deg 120deg,
+        #3E006A 150deg 180deg, /* Dark Purple */
+        #0000 210deg 300deg,
+        #007BFF 330deg /* Return to blue to complete the gradient */
+  );
+  /* Use standard masking properties with webkit fallback */
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: intersect;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  z-index: -1;
+}
+
+/* Pseudo-element for the blur effect */
+.addBtn:after {
+  content: "";
+  position: absolute;
+  inset: -100px;
+   background:
+    radial-gradient(200px at left  400px top 150px, #007BFF 100%, #0000), /* Blue */
+    radial-gradient(200px at right 400px bottom 150px, #3E006A 100%, #0000); /* Dark Purple */
+  
+  filter: blur(120px);
+  opacity: .2;
+  z-index: -2;
+}
+
+/* Transitions for hover effect */
+.addBtn:before,
+.addBtn:after {
+  transition:.5s, 99999s 99999s transform;
+}
+.addBtn:hover {
+  box-shadow: 0 0 0 1px #666;
+  text-shadow: 0px 0px 10px #3E006A;
+}
+
+.addBtn:hover:before,
+.addBtn:hover:after {
+  transform: rotate(36000deg);
+  transition: .5s, 600s linear transform;
+}
+.addBtn:before {
+  background-color: #222;
+  border: 2px solid #333;
+}

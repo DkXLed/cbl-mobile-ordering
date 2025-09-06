@@ -24,7 +24,7 @@ function getModalHtml(){
                     <input type="text" id="buyer-card-number" placeholder="**** **** **** ****">  
                     <label for "buyer-name">CVV</label>
                     <input type="text" id="card-cvv" placeholder="***">  
-                    <button class="submit-payment" id="submit-payment">Submit</button>
+                    <input type="submit" class="submit-payment" id="submit-payment">
                 </div>
             </div>
         </div> 

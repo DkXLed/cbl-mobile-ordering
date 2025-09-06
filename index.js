@@ -102,4 +102,11 @@ document.addEventListener('click', (event) => {
   }  
 })
 
+export function clearCartItems() {
+    for (const key in cart) {
+        delete cart[key];
+    }
+    displayCart();
+}
+
 

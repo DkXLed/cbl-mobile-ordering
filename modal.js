@@ -1,4 +1,5 @@
 
+import { clearCartItems } from './index.js'
 const modalFeed = document.getElementById("modal-feed")
 const modalElement = document.getElementById("modal-feed")
 const modalOverlay = document.getElementById("modal-overlay")
@@ -53,7 +54,11 @@ document.addEventListener('click', function(event) {
     }
 })
 
+
+
+
 function clearCart(){
+    clearCartItems()
     const buyerName = document.getElementById("buyer-name").value || "Customer"
     payInfo.innerHTML=`<div class="confirm-order">Thank you ${buyerName}, your order has been Submitted</div>`
 }
